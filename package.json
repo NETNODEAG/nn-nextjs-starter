@@ -23,6 +23,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@svgr/webpack": "^7.0.0",
     "postcss-import": "^15.1.0"
   }
 }
