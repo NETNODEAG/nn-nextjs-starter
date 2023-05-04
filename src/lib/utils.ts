@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
  *
  * @param inputs - Classnames to be merged
  * @returns Tailwind CSS classnames
- * 
+ *
  * @example
  * ```tsx
  * import { cn } from 'lib/utils';
@@ -16,4 +16,15 @@ import { twMerge } from 'tailwind-merge';
  */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+
+/*
+  This function is used to generate an absolute URL from a relative URL.
+  It will use the NEXT_PUBLIC_DRUPAL_BASE_URL environment variable to generate the absolute URL.
+
+  Example:
+  <img src={absoluteUrl(image.url)} alt={image.alt} />
+*/
+export function absoluteUrl(input: string) {
+  return `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}${input}`;
 }
