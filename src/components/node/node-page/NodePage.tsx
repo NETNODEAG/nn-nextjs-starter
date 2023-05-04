@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import Link from 'next/link';
 import { DrupalNode, DrupalParagraph } from 'next-drupal';
 
 import Paragraph from '@/components/paragraph/Paragraph';
