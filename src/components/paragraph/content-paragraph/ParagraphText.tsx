@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import Link from 'next/link';
 import { DrupalParagraph } from 'next-drupal';
 
 interface ParagraphTextProps {
@@ -12,7 +10,7 @@ export default function ParagraphText({ paragraph }: ParagraphTextProps) {
   return (
     <section data-paragraph-type="Text">
       <div
-        className="prose sm:top-3 md:top-0"
+        className="prose"
         dangerouslySetInnerHTML={{
           __html: text?.processed,
         }}
