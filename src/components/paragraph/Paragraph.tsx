@@ -1,12 +1,14 @@
 import { DrupalParagraph } from 'next-drupal';
 
-import { paragraphTypes } from './paragraphs';
+import { isParagraphType, paragraphTypes } from './paragraphs';
 
 interface ParagraphProps {
   paragraph: DrupalParagraph;
 }
 export default function Paragraph({ paragraph }: ParagraphProps) {
-  const ParagraphInstance = paragraphTypes[paragraph.type];
-
-  return ParagraphInstance ? <ParagraphInstance paragraph={paragraph} /> : null;
+  if (isParagraphType(paragraph.type)) {
+    const ParagraphInstance = paragraphTypes[paragraph.type];
+    return <ParagraphInstance paragraph={paragraph} />;
+  }
+  return null;
 }

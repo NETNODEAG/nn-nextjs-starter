@@ -1,6 +1,6 @@
 import { DrupalParagraph } from 'next-drupal';
 
-interface ParagraphTextProps {
+export interface ParagraphTextProps {
   paragraph: DrupalParagraph;
 }
 
