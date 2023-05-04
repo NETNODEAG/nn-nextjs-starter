@@ -1,5 +1,5 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
 import path from 'path';
+import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 // Use process.env.PORT by default and fallback to port 3000
 const PORT = process.env.PORT || 3000;
@@ -14,7 +14,7 @@ const config: PlaywrightTestConfig = {
   // Test directory
   testDir: path.join(__dirname, 'src/e2e'),
   // If a test fails, retry it additional 2 times
-  retries: 2,
+  retries: 1,
   // Artifacts folder where screenshots, videos, and traces are stored.
   outputDir: 'test-results/',
 
@@ -35,6 +35,10 @@ const config: PlaywrightTestConfig = {
     // Retry a test if its failing with enabled tracing. This allows you to analyse the DOM, console logs, network traffic etc.
     // More information: https://playwright.dev/docs/trace-viewer
     trace: 'retry-with-trace',
+    /* Take screenshot when test fails. */
+    screenshot: 'only-on-failure',
+    /* Record video on retry. */
+    video: 'on-first-retry',
 
     // All available context options: https://playwright.dev/docs/api/class-browser#browser-new-context
     // contextOptions: {
