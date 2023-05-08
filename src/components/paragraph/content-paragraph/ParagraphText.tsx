@@ -5,7 +5,7 @@ export interface ParagraphTextProps {
 }
 
 export default function ParagraphText({ paragraph }: ParagraphTextProps) {
-  const text = paragraph.text;
+  const text = paragraph.field_text;
 
   return (
     <section data-paragraph-type="Text">
