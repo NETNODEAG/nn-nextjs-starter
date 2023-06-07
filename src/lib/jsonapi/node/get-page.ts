@@ -16,6 +16,7 @@ const API_URL = `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/jsonapi/node/page`;
 
 /**
  * Get a single page
+ *
  * @param {string} id - The page id
  *
  * @return {Promise} Promise object represents a single page
@@ -40,13 +41,26 @@ export async function getSinglePageNode(id: string | null) {
     .getQueryObject();
 
   const queryString = apiParams.getQueryString();
+
   const jsonApiUrl = API_URL + '?' + queryString + '&jsonapi_include=1';
 
-  const response = await fetch(jsonApiUrl.toString(), {
-    next: { revalidate: 180 },
-  });
+  try {
+    const response = await fetch(jsonApiUrl.toString(), {
+      next: { revalidate: 180 },
+    });
 
-  const data = await response.json();
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-  return data.data[0];
+    const data = await response.json();
+
+    if (!data.data?.length) {
+      return null;
+    }
+
+    return data.data[0];
+  } catch (error) {
+    throw new Error(`ERROR: ${error}`);
+  }
 }
