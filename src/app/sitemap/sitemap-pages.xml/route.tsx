@@ -17,7 +17,9 @@ const PRIOTITY = 1.0;
  *
  * @returns {Promise} Promise object represents the generated sitemap as XML.
  */
-export async function GET() {
+export async function GET(req) {
+  const url = req.nextUrl.origin;
+
   try {
     const data = await getSitemapPagesData();
 
@@ -30,7 +32,7 @@ export async function GET() {
       return createResponse(body);
     }
 
-    const body = generateSitemap(data, PRIOTITY);
+    const body = generateSitemap(url, data, PRIOTITY);
     return createResponse(body);
   } catch (error) {
     console.error(

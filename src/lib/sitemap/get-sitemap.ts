@@ -30,16 +30,14 @@ export function createResponse(body) {
  *
  * @return {string} The sitemap
  */
-export function generateSitemap(data, priority = 0.5) {
-  const URL = process.env.NEXT_PUBLIC_FRONTEND_BASE_URL;
-
+export function generateSitemap(url, data, priority = 0.5) {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
       ${data
         .map((item) => {
           return `
             <url>
-              <loc>${URL}${item.path}</loc>
+              <loc>${url}${item.path}</loc>
               <lastmod>${item.changed}</lastmod>
               <changefreq>daily</changefreq>
               <priority>${priority}</priority>
