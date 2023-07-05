@@ -13,12 +13,25 @@
 > git init
 > git remote add origin git@bitbucket.org:NETNODEAG/change-to-your-git-repo.git
 > git add .
-> git commit -am "inital commit"
-> git push -u origin master
+> git commit -am "Inital commit"
+> git push -u origin main
 
 ## 3.1 Deploy to Vercel
+The most common way to create a Deployment on Vercel is through pushing code to Git repositories Creating an automatic Deployment begins by importing a Git repository on Vercel.
 
-- Follow https://vercel.com/new/netnodeag
+### 3.1.1 New project
+The next step is to create a new project from the Vercel Dashboard. Follow https://vercel.com/new/netnodeag
+
+### 3.1.2 Project settings
+
+#### Build & Development Settings
+
+- Set the Framework Preset to Next.js
+- Provide the following environment variables:
+  - `NEXT_IMAGE_DOMAIN`
+  - `NEXT_PUBLIC_DRUPAL_REST_BASE_URL`
+  - `NEXT_PUBLIC_DRUPAL_BASE_URL`
+
 
 ## 3.2 Deploy to Docker Host
 - Get ssh pub key from docker host and add it to the git repo
