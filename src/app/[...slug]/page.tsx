@@ -9,7 +9,7 @@ import NodePage from '@/components/node/node-page/NodePage';
 
 const RESOURCE_TYPES = ['node--page'];
 
-interface NodeProps {
+interface PageProps {
   params: { slug: Array<string> };
 }
 
@@ -37,7 +37,7 @@ async function getResource(slug: Array<string>) {
 
 export async function generateMetadata({
   params,
-}: NodeProps): Promise<Metadata> {
+}: PageProps): Promise<Metadata> {
   const { slug } = params;
   const entity = await getResource(slug);
 
@@ -67,7 +67,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Node({ params }: NodeProps) {
+export default async function Page({ params }: PageProps) {
   const { slug } = params;
 
   // If we don't receive a slug, it means the resource doesn't exist.

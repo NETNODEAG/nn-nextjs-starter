@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 /**
  * The API URL
  *
@@ -24,11 +26,13 @@ export async function getResourceBySlug(slug: Array<string>) {
       return null;
     }
 
-    // If the resource was resolved, return the data
+    // Return the resource
     return resource;
   } catch (error) {
-    throw new Error(
-      `Error fetching resource with slug ${slug.join('/')}: ${error}`
-    );
+    // Log the error
+    console.error(error);
+
+    // If there was an error, return to the 404 page
+    notFound();
   }
 }
