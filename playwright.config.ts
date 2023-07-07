@@ -1,5 +1,5 @@
 import path from 'path';
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { devices, PlaywrightTestConfig } from '@playwright/test';
 
 // Use process.env.PORT by default and fallback to port 3000
 const PORT = process.env.PORT || 3000;
@@ -16,7 +16,7 @@ const config: PlaywrightTestConfig = {
   // If a test fails, retry it additional 2 times
   retries: 1,
   // Artifacts folder where screenshots, videos, and traces are stored.
-  outputDir: 'test-results/',
+  outputDir: path.join(__dirname, 'src/e2e/test-results'),
 
   // Run your local dev server before starting the tests:
   // https://playwright.dev/docs/test-advanced#launching-a-development-web-server-during-the-tests

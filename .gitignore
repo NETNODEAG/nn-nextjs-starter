@@ -39,5 +39,6 @@ next-env.d.ts
 
 # playwright
 /test-results/
+/src/e2e/test-results/
 /playwright-report/
 /playwright/.cache/
