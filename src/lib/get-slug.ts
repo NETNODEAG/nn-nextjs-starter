@@ -10,6 +10,8 @@ const API_URL = `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/router/translate-pat
 /**
  * Get a single resource (entity) by slug
  *
+ * @param {Array<string>} slug - The slug
+ *
  * @return {Promise} Promise object represents a single resource
  */
 export async function getResourceBySlug(slug: Array<string>) {
