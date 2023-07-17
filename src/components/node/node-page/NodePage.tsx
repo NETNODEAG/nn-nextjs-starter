@@ -14,9 +14,10 @@ export default function NodePage({ node }: NodePageProps) {
     <article data-node-type="Page">
       <h1>{title}</h1>
 
-      {paragraphs?.map((paragraph: DrupalParagraph) => {
-        return <Paragraph key={paragraph.id} paragraph={paragraph} />;
-      })}
+      {Array.isArray(paragraphs) &&
+        paragraphs?.map((paragraph: DrupalParagraph) => {
+          return <Paragraph key={paragraph.id} paragraph={paragraph} />;
+        })}
     </article>
   );
 }
