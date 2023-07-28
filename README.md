@@ -18,6 +18,24 @@ npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextj
 npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextjs-starter/tree/13-drupal
 ```
 
+### 1.2 Linking Your Frontend to Drupal
+
+Here are the streamlined steps to connect your frontend with Drupal:
+
+1. Navigate to your frontend project directory:
+
+```
+cd frontend.example.ch
+```
+
+2. Create a local environment file from the example:
+
+```
+cp .env.example .env.local
+```
+
+3. Open `.env.local` and populate the necessary environment variables required for Drupal deployments. Refer to your Drupal deployment documentation for specifics. Save the changes when done.
+
 ### 1.2 Run the project!
 
 ```
@@ -26,6 +44,16 @@ nvm use
 npm install
 npm run dev
 ```
+
+### 1.3 Adapt the project to your needs
+
+#### Startpage
+
+To change the default landing page of your application, follow the steps outlined below. This process involves modifying the `STARTPAGE_SLUG` value to reflect the Node ID of the page you wish to make your new start page.
+
+1. Locate File: Go to your project's `src/app/` directory and open `page.tsx`.
+2. Change Value: Find the `STARTPAGE_SLUG` constant and replace its current value with your desired Node ID as a string (e.g., "12345").
+3. Save and Test: Save the file, then run the application to confirm that the new start page matches the specified Node ID.
 
 ## 2. Create git repo & push code
 
