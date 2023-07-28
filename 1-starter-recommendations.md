@@ -1,6 +1,6 @@
 # nn-nextjs-starter: Starter recommendations
 
-## Drupal module
+## 📦 Drupal module
 
 This list recommends Drupal modules and Next.js for creating a decoupled Drupal site. Here's a brief explanation for each module:
 
@@ -19,3 +19,25 @@ Remember to run the corresponding commands for installing and enabling these mod
 ### Netnode decoupled config recommendations
 
 https://github.com/NETNODEAG/nn-drupal-starter/blob/10.0.x/3_netnode_decoupled_config_lando.sh
+
+## 🪄 Libraries
+
+### React-Query (https://tanstack.com/query/latest)
+
+React Query is a powerful, robust library that handles fetching, caching, synchronization, and updating of server state in your React applications. Key features of React Query include:
+
+- Auto Caching: Automatically caches fetched data.
+- Background Updates: Updates data when refocusing or reconnecting.
+- Paginated/Infinite Queries: Supports both query types.
+- Devtools: Offers built-in tools for query inspection and cache management.
+- Suspense Ready: Ready for integration with React Suspense.
+
+### SplideJS (https://splidejs.com)
+
+Splide.js is a lightweight, powerful, flexible, and highly customizable slider and carousel library for the web. Key features of Splide.js include:
+
+- Flexibility: Wide range of customizable options.
+- Responsive: Supports different settings for various screen sizes.
+- Customizable: Extendable API and CSS-based theming.
+- Accessibility: Supports keyboard navigation and screen readers.
+- Touch Friendly: Allows for drag and swipe gestures.
