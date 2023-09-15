@@ -16,7 +16,7 @@ const API_URL = `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/router/translate-pat
  */
 export async function getResourceBySlug(slug: Array<string>) {
   // Build the JSON API URL based on the slug array
-  const jsonApiUrl = `${API_URL}/${slug.join('/')}/?format=json_api`;
+  const jsonApiUrl = `${API_URL}/${slug.join('/')}`;
 
   try {
     // Fetch the data from the API URL
