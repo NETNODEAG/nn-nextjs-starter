@@ -41,7 +41,7 @@ async function getResource(slug = STARTPAGE_SLUG) {
   const getNode = nodeDictionary[resourceName];
 
   if (getNode) {
-    return await getNode(nodeRequest?.entity?.id);
+    return await getNode(nodeRequest?.entity?.uuid);
   }
 
   // Redirect to the 404 page using the notFound() function if no entity is received.
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     title: seoTitle,
     description: seoDescription,
     openGraph: {
-      siteName: siteConfig.name,
+      siteName: siteConfig.title,
       title: seoTitle,
       description: seoDescription,
       images: [
@@ -83,6 +83,7 @@ export default async function RootPage() {
   // The getResource() function is used to retrieve a resource, utilizing its unique slug as the identifier.
   const entity = await getResource(STARTPAGE_SLUG);
 
+  console.log('entity', entity);
   // Redirect to the 404 page using the notFound() function if no entity is received.
   if (!entity) {
     notFound();

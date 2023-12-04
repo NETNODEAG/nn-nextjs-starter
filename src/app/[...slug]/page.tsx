@@ -42,7 +42,7 @@ async function getResource(slug: Array<string>) {
   const getNode = nodeDictionary[resourceName];
 
   if (getNode) {
-    return await getNode(nodeRequest?.entity?.id);
+    return await getNode(nodeRequest?.entity?.uuid);
   }
 
   // Redirect to the 404 page using the notFound() function if no entity is received.
@@ -68,7 +68,7 @@ export async function generateMetadata({
     title: seoTitle,
     description: seoDescription,
     openGraph: {
-      siteName: siteConfig.name,
+      siteName: siteConfig.title,
       title: seoTitle,
       description: seoDescription,
       images: [

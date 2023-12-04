@@ -1,32 +1,29 @@
 import { DrupalJsonApiParams } from 'drupal-jsonapi-params';
 
 /**
- * The resource type
- *
+ * The resource type.
  * @type {string}
  */
 const RESOURCE_TYPE = 'node--page';
 
 /**
- * The API URL
- *
+ * The API URL.
  * @type {string}
  */
 const API_URL = `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/jsonapi/node/page`;
 
 /**
- * Get a single page node
- *
+ * Get a single page node.
  * @param {string} id - The node id
  *
- * @return {Promise} Promise object represents a single page node
+ * @return {Promise} Promise object represents a single node
  */
 export async function getSinglePageNode(id: string) {
   const apiParams = new DrupalJsonApiParams();
 
   apiParams
     .addFilter('status', '1')
-    .addFilter('drupal_internal__nid', id)
+    .addFilter('id', id)
     .addInclude(['field_main_image.field_media_image', 'field_paragraphs'])
     .addFields(RESOURCE_TYPE, [
       'title',
@@ -65,9 +62,8 @@ export async function getSinglePageNode(id: string) {
 }
 
 /**
- * Get multiple page nodes
- *
- * @return {Promise} Promise object represents multiple page nodes
+ * Get multiple page nodes.
+ * @return {Promise} Promise object represents multiple nodes
  */
 export async function getMultiplePageNodes() {
   const apiParams = new DrupalJsonApiParams();
