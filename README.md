@@ -15,7 +15,7 @@ npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextj
 **Drupal specific starter**
 
 ```
-npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextjs-starter/tree/13-drupal
+npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextjs-starter/tree/drupal
 ```
 
 ### 1.2 Linking Your Frontend to Drupal
