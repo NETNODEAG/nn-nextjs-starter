@@ -9,7 +9,7 @@ Create a new Next.js app using one of the following starter templates, where eve
 **Basic starter**
 
 ```
-npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextjs-starter
+npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextjs-starter/tree/13
 ```
 
 **Drupal specific starter**
