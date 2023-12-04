@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {},
   images: {
-    domains: [process.env.NEXT_IMAGE_DOMAIN],
+    remotePatterns: [
+      {
+        hostname: process.env.NEXT_IMAGE_DOMAIN,
+      },
+    ],
   },
   webpack(config) {
     config.module.rules.push({
