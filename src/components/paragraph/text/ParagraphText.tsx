@@ -1,5 +1,7 @@
 import { DrupalParagraph } from 'next-drupal';
 
+import { FormattedText } from '@/components/layout/FormattedText';
+
 export interface ParagraphTextProps {
   paragraph: DrupalParagraph;
 }
@@ -9,12 +11,7 @@ export default function ParagraphText({ paragraph }: ParagraphTextProps) {
 
   return (
     <section data-paragraph-type="Text">
-      <div
-        className="prose"
-        dangerouslySetInnerHTML={{
-          __html: text?.processed,
-        }}
-      />
+      {text && <FormattedText html={text?.processed} className="prose" />}
     </section>
   );
 }

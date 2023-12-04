@@ -15,6 +15,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "clsx": "^2.0.0",
     "drupal-jsonapi-params": "^2.3.1",
+    "html-react-parser": "^5.0.7",
     "next": "^14.0.3",
     "next-drupal": "^1.6.0",
     "react": "^18.2.0",

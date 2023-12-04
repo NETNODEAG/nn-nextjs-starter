@@ -1,15 +1,13 @@
 import { notFound } from 'next/navigation';
 
 /**
- * The API URL
- *
+ * The API URL.
  * @type {string}
  */
 const API_URL = `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/router/translate-path?path=`;
 
 /**
- * Get a single resource (entity) by slug
- *
+ * Get a single resource (entity) by slug.
  * @param {Array<string>} slug - The slug
  *
  * @return {Promise} Promise object represents a single resource

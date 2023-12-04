@@ -30,3 +30,15 @@ export function cn(...inputs: ClassValue[]) {
 export function absoluteUrl(input: string) {
   return `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}${input}`;
 }
+
+/**
+ * This function is used to check if a URL is relative or absolute
+ *
+ * @example
+ * ```tsx
+ * <a href={isRelative(url) ? url : absoluteUrl(url)} />
+ * ```
+ */
+export function isRelative(url: string) {
+  return !new RegExp('^(?:[a-z]+:)?//', 'i').test(url);
+}

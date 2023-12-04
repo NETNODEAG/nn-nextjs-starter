@@ -1,8 +1,6 @@
 import { FunctionComponent } from 'react';
 
-import ParagraphText, {
-  ParagraphTextProps,
-} from './content-paragraph/ParagraphText';
+import ParagraphText, { ParagraphTextProps } from './text/ParagraphText';
 
 interface ParagraphPropMap {
   'paragraph--text': ParagraphTextProps;
