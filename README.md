@@ -4,7 +4,7 @@
 ### basic starter
 > npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextjs-starter
 ### drupal specific starter
-> npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextjs-starter/tree/13-drupal
+> npx create-next-app frontend.example.ch -e https://github.com/NETNODEAG/nn-nextjs-starter/tree/drupal
 
 ## 2. Create git repo & push code
 - Create repo https://bitbucket.org/NETNODEAG/workspace/create/repository
