@@ -83,7 +83,6 @@ export default async function RootPage() {
   // The getResource() function is used to retrieve a resource, utilizing its unique slug as the identifier.
   const entity = await getResource(STARTPAGE_SLUG);
 
-  console.log('entity', entity);
   // Redirect to the 404 page using the notFound() function if no entity is received.
   if (!entity) {
     notFound();
